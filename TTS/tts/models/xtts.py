@@ -321,6 +321,10 @@ class Xtts(BaseTTS):
             .unsqueeze(-1)
             .to(self.device)
         )
+        
+    def get_speaker_embedding_from_audio(self, image, sr):
+        return self.image_encoder.forward(image)
+        
 
     @torch.inference_mode()
     def get_conditioning_latents(
@@ -452,7 +456,7 @@ class Xtts(BaseTTS):
             temperature: (float) The softmax temperature of the autoregressive model. Defaults to 0.65.
 
             length_penalty: (float) A length penalty applied to the autoregressive decoder. Higher settings causes the
-                model to produce more terse outputs. Defaults to 1.0.
+                model to produce more terse  outputs. Defaults to 1.0.
 
             repetition_penalty: (float) A penalty that prevents the autoregressive decoder from repeating itself during
                 decoding. Can be used to reduce the incidence of long silences or "uhhhhhhs", etc. Defaults to 2.0.
