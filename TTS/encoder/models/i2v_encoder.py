@@ -23,7 +23,7 @@ class I2VEncoder(nn.Module):
             config.model_params["projection_dim"])
         
     def forward(self, images: torch.Tensor):
-        output = self.vision_model(images)[1]
+        output = self.vision_model(images, return_dict=False)[1]
         output = self.projection(output)
         return output
 
