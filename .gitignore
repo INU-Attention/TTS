@@ -172,3 +172,7 @@ local_scripts/*
 coqui_demos/*
 my/*
 *.pt
+
+
+#I2V
+temp.ipynb
