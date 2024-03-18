@@ -322,12 +322,12 @@ class ModelManager(object):
 
     @staticmethod
     def tos_agreed(model_item, model_full_path):
-        """Check if the user has agreed to the terms of service"""
-        if "tos_required" in model_item and model_item["tos_required"]:
-            tos_path = os.path.join(model_full_path, "tos_agreed.txt")
-            if os.path.exists(tos_path) or os.environ.get("COQUI_TOS_AGREED") == "1":
-                return True
-            return False
+        #"""Check if the user has agreed to the terms of service"""
+        #if "tos_required" in model_item and model_item["tos_required"]:
+        #    tos_path = os.path.join(model_full_path, "tos_agreed.txt")
+        #    if os.path.exists(tos_path) or os.environ.get("COQUI_TOS_AGREED") == "1":
+        #        return True
+        #    return False
         return True
 
     def create_dir_and_download_model(self, model_name, model_item, output_path):
